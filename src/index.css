@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+aside {
+  min-height: 55rem;
+}
+
+#content {
+  display: flex;
+}
+
+section {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-creation {
+  text-align: center;
+}
+
+.project {
+  width: 50%;
+}
+
+.project h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.project label {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: gray;
+  text-transform: uppercase;
+  padding: 0.5em 0em;
+}
+
+.project input {
+  background-color: lightgrey;
+  height: 2em;
+}
+
+.project textarea {
+  background-color: lightgrey;
+}
+
+.project p {
+  font-size: 1em;
+  padding: 1em;
+}
+
+.project button {
+  background-color: black;
+  color: white;
+  border-radius: 4%;
+  font-size: 1em;
+  padding: 0.8em 1.5em;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+#add-project {
+  background-color: grey;
+  border-radius: 4%;
+  font-size: 1em;
+  padding: 0.8em 1.5em;
+}
+
+.adding {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.adding button {
+  margin: 1rem 1rem;
+}
+
+#saving {
+  background-color: black;
+  color: white;
+  border-radius: 10%;
+}
+
+#cancel {
+  background-color: transparent;
+  color: black;
+}
+
+.creating {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

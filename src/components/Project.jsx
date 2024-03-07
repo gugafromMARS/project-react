@@ -1,38 +1,51 @@
-import photo from "../assets/no-projects.png";
+import { forwardRef } from "react";
 
-export default function Project({ addProject }) {
+const Project = forwardRef(function Project(
+  { tasksHandler, selectedProject, deleteProject, clearTask },
+  ref
+) {
+  const haveProjectSelected = Object.keys(selectedProject).length != 0;
+
+  const haveTasks = selectedProject.tasks.length > 0;
+
   let content = (
-    <div className="project no-creation">
-      <img id="logo" src={photo} alt="logo"></img>
-      <h1>No Project Selected</h1>
-      <p>Select a project or get started with a new one</p>
-      <button>Create new project</button>
-    </div>
-  );
-
-  if (addProject) {
-    content = (
-      <div className="project">
-        <div className="adding">
-          <button id="cancel">Cancel</button>
-          <button id="saving">Save</button>
+    <section>
+      <div className="project-content">
+        <div className="project-info">
+          <h1>{selectedProject.title}</h1>
+          <button onClick={() => deleteProject(selectedProject)}>Delete</button>
+          <p>{selectedProject.date}</p>
+          <p>{selectedProject.description}</p>
         </div>
-        <div className="creating">
-          <label>Title</label>
-          <input type="text"></input>
-          <label>Description</label>
-          <textarea type="text" cols="40" rows="3"></textarea>
-          <label>Due data</label>
-          <input type="date"></input>
+        <div className="project-tasks">
+          <h2>Tasks</h2>
+          <input ref={ref} type="text"></input>
+          <button onClick={() => tasksHandler(selectedProject)}>
+            Add task
+          </button>
+          {!haveTasks && <p>This project doesn't have any tasks yet.</p>}
+          {haveTasks && (
+            <div className="tasks">
+              <ul>
+                {selectedProject.tasks.map((task, taskIndex) => (
+                  <li key={taskIndex}>
+                    {task}
+                    <button
+                      onClick={() => clearTask(selectedProject, taskIndex)}
+                    >
+                      Clear
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
-    );
-  }
-
-  return (
-    <section>
-      {!addProject && content}
-      {addProject && content}
     </section>
   );
-}
+
+  return <>{haveProjectSelected && content}</>;
+});
+
+export default Project;

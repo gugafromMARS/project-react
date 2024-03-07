@@ -103,3 +103,74 @@ section {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+aside ul {
+  padding: 2em 0em;
+}
+
+aside li {
+  padding: 0.5em 0em;
+}
+
+.project-content {
+  width: 50%;
+}
+
+.project-info {
+  border-bottom: 1px solid;
+}
+
+.project-info h1 {
+  display: inline;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1em 0em;
+  text-transform: uppercase;
+}
+
+.project-info p {
+  margin: 1rem;
+}
+
+.project-info button {
+  float: right;
+  background-color: black;
+  color: white;
+  border-radius: 4%;
+  font-size: 1em;
+  padding: 0.8em 1.5em;
+}
+
+.project-tasks input {
+  background-color: lightgrey;
+  height: 2em;
+  width: 300px;
+}
+
+.project-tasks h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1em 0em;
+}
+
+.project-tasks button {
+  margin-left: 1em;
+}
+.project-tasks p {
+  margin-top: 1em;
+}
+
+.tasks {
+  padding: 1em 0em;
+}
+
+.tasks li {
+  display: inline-block;
+  background-color: lightgrey;
+  width: 500px;
+}
+
+.tasks li button {
+  float: right;
+  padding: 0em 1em;
+}
